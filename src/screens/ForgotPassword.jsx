@@ -2,8 +2,7 @@ import React from "react";
 import { DatePickerAndroid, Pressable, StyleSheet, Text, View, Image, TextInput, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { NavigationHelpersContext } from "@react-navigation/native";
-import Svg,{ Path, SvgUri} from "react-native-svg";
-// import forgotCurve from "../../assets/forgotCurve.svg";
+import { SvgUri} from "react-native-svg";
 
 export default function LoginPage({navigation}) {  
     const [email, setEmail] = React.useState("");
@@ -25,18 +24,11 @@ export default function LoginPage({navigation}) {
     return(
         <View style={styles.container}>
             <View style={styles.headerContainer}>
-                {/* <Svg width={48} height={48} viewbox="0 0 48 48" {..props}>
-                    <Path d="../../assets/forgotCurve.svg" fill="#00000" />
-                </Svg> 
-
-                 uri=henewcode.com/assets/images/thumbnails/homer-simpson.svg"
-                
-                */}
 
                 <SvgUri
-                    width="100%"
+                    width="200%"
                     height="100%"
-                    uri="https://drive.google.com/file/d/1HFCj-PgMl3yN9i9B1fraI9K-UXaHKraf/view?ts=62bf4a1a"
+                    uri="https://raw.githubusercontent.com/isabella-design/bookapp/2bab63c40ad3f4e3ed32a3d6b0f7e67a929860b6/assets/forgotCurve.svg"
                 />
                 
                 <Text style={styles.headerText}> 
