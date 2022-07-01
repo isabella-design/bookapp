@@ -26,14 +26,14 @@ export default function LoginPage({navigation}) {
             <View style={styles.headerContainer}>
 
                 <SvgUri
-                    width="200%"
-                    height="100%"
-                    uri="https://raw.githubusercontent.com/isabella-design/bookapp/2bab63c40ad3f4e3ed32a3d6b0f7e67a929860b6/assets/forgotCurve.svg"
+                    width="300%"
+                    height="300%"
+                    uri="https://raw.githubusercontent.com/isabella-design/bookapp/1f098fe71d89bbcb23c1063715938c5b6571c7a5/assets/forgotCurve.svg"
                 />
                 
                 <Text style={styles.headerText}> 
                     Reset Password
-</Text>
+                </Text>
             </View>
 
             <View style={styles.resetContainer}>
