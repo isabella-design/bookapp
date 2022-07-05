@@ -29,14 +29,13 @@ export default function LoginPage({navigation}) {
                     uri="https://raw.githubusercontent.com/isabella-design/bookapp/main/assets/forgotCurve.svg"
                 />
             </View>
-
-            <View style={styles.mainTextContainer}>
-                <Text style={styles.headerText}>
-                    Reset Password
-                </Text>
-            </View>
-
+            
             <View style={styles.resetContainer}>
+                <View style ={styles.mainTextContainer}> 
+                    <Text style={styles.headerText}>
+                        Reset Password
+                    </Text>
+                </View>
                 <TextInput
                     style={[styles.input, {'marginBottom': 35} ]}
                     placeholder= "Email"
@@ -73,7 +72,7 @@ container: {
     flex: 1,
 },
   headerContainer: {
-    flex: 2,
+    flex: 2.3,
     backgroundColor: "#FFFAF1",
     alignItems: "center",
     justifyContent: "center",
@@ -82,16 +81,12 @@ container: {
   resetContainer: {
     flex: 3, 
     backgroundColor: "#FFFAF1",
-    justifyContent: "center",
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
   },
 
   mainTextContainer: {
-    flex: 1, 
-    backgroundColor: "#FFFAF1",
     justifyContent: "center",
     alignItems: "center",
+    padding: 30,
   },
 
   svg: {
@@ -103,6 +98,7 @@ container: {
     color: "black",
     fontSize: 40,
     fontWeight: "bold",
+    alignSelf: "center",
     },
 
 nextButton: {
