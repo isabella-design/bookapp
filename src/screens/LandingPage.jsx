@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         flex: 3,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "white",
+        backgroundColor: "#FFFAF1",
         
     },
 
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         justifyContent: "space-between",
-        backgroundColor: "white",
+        backgroundColor: "#FFFAF1",
     },
 
     background: {
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         height: 800,
         width: 800,
         borderRadius: 400,
-        backgroundColor: "white",
+        backgroundColor: "#FFFAF1",
         
         
     },

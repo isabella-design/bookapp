@@ -24,14 +24,14 @@ export default function LoginPage({navigation}) {
     return(
         <View style={styles.container}>
             <View style={styles.headerContainer}>
-
-                <SvgUri
-                    width="300%"
-                    height="300%"
-                    uri="https://raw.githubusercontent.com/isabella-design/bookapp/1f098fe71d89bbcb23c1063715938c5b6571c7a5/assets/forgotCurve.svg"
+                <SvgUri style={styles.svg}
+                    resizeMode="contain"
+                    uri="https://raw.githubusercontent.com/isabella-design/bookapp/main/assets/forgotCurve.svg"
                 />
-                
-                <Text style={styles.headerText}> 
+            </View>
+
+            <View style={styles.mainTextContainer}>
+                <Text style={styles.headerText}>
                     Reset Password
                 </Text>
             </View>
@@ -74,19 +74,33 @@ container: {
 },
   headerContainer: {
     flex: 2,
+    backgroundColor: "#FFFAF1",
+    alignItems: "center",
+    justifyContent: "center",
   }, 
 
   resetContainer: {
     flex: 3, 
-    backgroundColor: "#FFFDF4",
+    backgroundColor: "#FFFAF1",
     justifyContent: "center",
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
   },
 
+  mainTextContainer: {
+    flex: 1, 
+    backgroundColor: "#FFFAF1",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  svg: {
+    width: '100vw',
+    height: "75%",
+  },
+
   headerText: {
-    flex: 2,
-    color: "white",
+    color: "black",
     fontSize: 40,
     fontWeight: "bold",
     },
