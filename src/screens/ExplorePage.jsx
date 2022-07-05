@@ -1,4 +1,4 @@
-import { DatePickerAndroid, Pressable, StyleSheet, Text, View, Image } from 'react-native';
+import { DatePickerAndroid, Pressable, StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function ExplorePage() {  
@@ -21,74 +21,107 @@ export default function ExplorePage() {
         
   {/*Menu bar buttons*/}
         <View style={styles.buttonContainer}>
-          <Pressable 
-            onPress={printHello}
+          <ScrollView 
+            horizontal={true}
+            showsHorizontalScrollIndicator = {false}
           >
-            <LinearGradient
-              // Button Linear Gradient
-              colors={['#FF259B', '#FFC3E4']}
-              start={{ x: 0, y: 0 }}  // left
-              end={{ x: 0.95, y: 0 }}  // start from right
-              style={styles.button}
-            >
-              <Text style={styles.menuText}>Science</Text>
-            </LinearGradient>
-          </Pressable>
-          <Pressable 
-            onPress={printHello}
-            >
-            <LinearGradient
-              // Button Linear Gradient
-              colors={['#FF9B52', '#FFEE51']}
-              start={{ x: 0, y: 0 }}  // left
-              end={{ x: 0.95, y: 0 }}  // start from right
-              style={styles.button}
-            >
-              <Text style={styles.menuText}>Tech</Text>
-            </LinearGradient>
-            </Pressable>
-
             <Pressable 
-            onPress={printHello}
+              onPress={printHello}
+              style={({ pressed }) => [
+                {
+                    opacity: pressed
+                    ? 0.85
+                    : 1.0
+                },
+               
+                ]}
             >
-            <LinearGradient
-              // Button Linear Gradient
-              colors={['#27D093', '#BEEEE5']}
-              start={{ x: 0, y: 0 }}  // left
-              end={{ x: 0.95, y: 0 }}  // start from right
-              style={styles.button}
-            >
-              <Text style={styles.menuText}>Engineering</Text>
-            </LinearGradient>
+              <LinearGradient
+                // Button Linear Gradient
+                colors={['#FF259B', '#FFC3E4']}
+                start={{ x: 0, y: 0 }}  // left
+                end={{ x: 0.99, y: 0 }}  // start from right
+                style={styles.button}
+              >
+                <Text style={styles.menuText}>Science</Text>
+              </LinearGradient>
             </Pressable>
-
             <Pressable 
-            onPress={printHello}
-            >
-            <LinearGradient
-              // Button Linear Gradient
-              colors={['#1A43AC', '#7DC9FF']}
-              start={{ x: 0, y: 0 }}  // left
-              end={{ x: 0.95, y: 0 }}  // start from right
-              style={styles.button}
-            >
-              <Text style={styles.menuText}>Math</Text>
-            </LinearGradient>
-            </Pressable>
+              onPress={printHello}
+              style={({ pressed }) => [
+                {
+                    opacity: pressed
+                    ? 0.85
+                    : 1.0
+                },
+               
+                ]}
+              >
+              <LinearGradient
+                // Button Linear Gradient
+                colors={['#FF9B52', '#FFEE51']}
+                start={{ x: 0, y: 0 }}  // left
+                end={{ x: 0.99, y: 0 }}  // start from right
+                style={styles.button}
+              >
+                <Text style={styles.menuText}>Tech</Text>
+              </LinearGradient>
+              </Pressable>
 
+              <Pressable 
+              onPress={printHello}
+              style={({ pressed }) => [
+                {
+                    opacity: pressed
+                    ? 0.85
+                    : 1.0
+                },
+               
+                ]}
+              >
+              <LinearGradient
+                // Button Linear Gradient
+                colors={['#27D093', '#BEEEE5']}
+                start={{ x: 0, y: 0 }}  // left
+                end={{ x: 0.99, y: 0 }}  // start from right
+                style={styles.button}
+              >
+                <Text style={styles.menuText}>Engineering</Text>
+              </LinearGradient>
+              </Pressable>
 
-            
-
-          
-          
+              <Pressable 
+              onPress={printHello}
+              style={({ pressed }) => [
+                {
+                    opacity: pressed
+                    ? 0.85
+                    : 1.0
+                },
+               
+                ]}
+              >
+              <LinearGradient
+                // Button Linear Gradient
+                colors={['#1A43AC', '#7DC9FF']}
+                start={{ x: 0, y: 0 }}  // left
+                end={{ x: 0.99, y: 0 }}  // start from right
+                style={styles.button}
+              >
+                <Text style={styles.menuText}>Math</Text>
+              </LinearGradient>
+              </Pressable>
+          </ScrollView>
         </View>
       
   {/*one of the event buttons*/}
         <View style={styles.eventsContainer}>
-          <Text>
-            Upcoming Events
-          </Text>
-  
+            <View style={styles.categoryTextContainer}>
+                <Text style={styles.categoryText}>      
+                    Upcoming Events  
+                </Text>
+            </View>
+      
           <Pressable
             onPress={printHello}
             style={ 
@@ -128,7 +161,7 @@ export default function ExplorePage() {
 
   {/*guidelines container with info on app*/}
         <View style={styles.announcementsContainer} >
-          <Text style={[styles.clubGuideText,]}>
+          <Text style={[styles.categoryText,]}>
             Club Guides
           </Text>
 
@@ -198,25 +231,16 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  buttonContainer: {
-    flexDirection: "row",
-    backgroundColor: "transparent",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
+  categoryTextContainer: {
+    padding: 30, 
   },
 
-  scienceButton: {
-        borderWidth: 2,
-        borderColor: "pink",
-        borderRadius: 25,
-        marginHorizontal: 8,
-        width: 180,
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 50,
-     
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: -31,
   },
+
 
   button: {
     backgroundColor: "transparent",
@@ -224,21 +248,18 @@ const styles = StyleSheet.create({
     borderColor: "transparent",
     borderRadius: 25,
     marginHorizontal: 8,
-    width: 90,
+    width: 140,
     alignItems: "center",
     justifyContent: "center",
     padding: 13,
   },
 
   eventsButton: {
-    justifyContent: "flex-start",
     borderWidth: 2,
     borderColor: "transparent",
     borderRadius: 25,
-    marginHorizontal: 8,
     width: 260,
     height: 250,
-    alignItems: "flex-start",
     padding: 13,
     shadowColor: "#8D9093",
     shadowOffset: { width: 0, height: 1 },  // negative values bring shadow up higher
@@ -295,13 +316,12 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
 
-  clubGuideText: {
-    fontSize: 12,
+  
+
+  categoryText: {
+    fontSize: 19,
     color: "black",
-    alignSelf: "flex-start",
-    marginTop: 20,
-    marginBottom: 20,
-    fontWeight: "900",
+    fontWeight: "500",
   },
 
   menuText: {
