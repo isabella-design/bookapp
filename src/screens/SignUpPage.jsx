@@ -2,12 +2,32 @@ import React from "react";
 import {Pressable, StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { textDecorationColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
 
 export default function SignUpPage({navigation}) {  
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [confirmPassword, setConfirmPassword] = React.useState("");
+
+    function signUp() {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                console.log("success")
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log("signup fail", errorMessage)
+                // ..
+            });
+    }
+    
     return(
         <View style={styles.parentContainer}>
             <View style={styles.titleContainer}>
@@ -57,7 +77,7 @@ export default function SignUpPage({navigation}) {
                 onChangeText={setConfirmPassword}
             />
 
-            <Pressable onPress={() => navigation.navigate('Tabs')} style={({ pressed }) => [
+            <Pressable onPress={() => signUp()} style={({ pressed }) => [
                 {
                     opacity: pressed
                     ? 0.5
